@@ -4,6 +4,8 @@
 ## Pré-requisitos:
 -Ter o node.js instalado e actualizado
 
+-Certificarse ter o Angular CLI instalado globalmente para poder gerenciar o projeto. Caso não tenha utilizar: npm install -g @angular/cli
+
 ## Como rodar o conversor?:
 1-Clone o repertorio na sua maquina com o Git Bash
 
