@@ -7,51 +7,52 @@ import { CommonModule } from '@angular/common';
   selector: 'app-root',
   imports: [RouterOutlet, FormsModule, CommonModule],
   template: `
-    <div class="geral">
-      <h1>Conversor de Moedas</h1>
-      
-      <div class="imagem-container">
-        <img [src]="imagemMoeda" alt="Moeda selecionada" >
-      </div>
+      <div class="geral">
+        <h1>Conversor de Moedas</h1>
+        
+        <div class="imagem-container">
+          <img [src]="imagemMoeda" alt="Moeda selecionada" >
+        </div>
 
 
-      <div class="context">
-        <label>Valor em Real (R$): </label>
-        <input type="number" [(ngModel)]="valorReal" min="0.01" step="0.01">
-      </div>
-      
-      <div class="context">
-        <label>Converter para: </label>
-        <select [(ngModel)]="moedaSelecionada" (change)="atualizarImagem()">
-          <option value="R$">--</option>  
-          <option value="USD">Dólar</option>
-          <option value="EUR">Euro</option>
-          <option value="GBP">Libra</option>
-        </select>
-      </div>
+        <div class="context">
+          <label>Valor em Real (R$): </label>
+          <input type="number" [(ngModel)]="valorReal" min="0.01" step="0.01">
+        </div>
+        
+        <div class="context">
+          <label>Converter para: </label>
+          <select [(ngModel)]="moedaSelecionada" (change)="atualizarImagem()">
+            <option value="R$">--</option>  
+            <option value="USD">Dólar</option>
+            <option value="EUR">Euro</option>
+            <option value="GBP">Libra</option>
+          </select>
+        </div>
 
-      <button (click)="converter()">
-        Converter
-      </button>
-      
-      <div *ngIf="resultado" class="resultado">
-        <p>
-          {{valorReal}} Reais = {{resultado}} {{moedaSelecionada}}
-        </p>
+        <button (click)="converter()">
+          Converter
+        </button>
+        
+        <div *ngIf="resultado" class="resultado">
+          <p>
+            {{valorReal}} Reais = {{resultado}} {{moedaSelecionada}}
+          </p>
+        </div>
+        
+        <router-outlet />
       </div>
-      
-      <router-outlet />
-    </div>
-  `,
+    `,
   styles: [
-    `.geral {
+    ` .geral {
         text-align:center;
-        max-width:500px; 
+        width:50%; 
         margin:0 auto; 
         padding:150px; 
         font-family: Georgia;
         color: #FFD700;
-        background: #006400; 
+        background-color: rgba(0, 100, 0, 0.7);
+      
       }
       .context{
         margin:15px;
